@@ -32,7 +32,7 @@ public class Arm extends Subsystem {
     /**
      * Constructs a new Arm.
      */
-    public Arm () {
+    private Arm () {
         armTalon = new TalonSRX(CAN_IDs.ARM_TALON);
     }
 

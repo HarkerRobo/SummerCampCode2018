@@ -35,7 +35,7 @@ public class Intake extends Subsystem {
     /**
      * Constructs a new Intake.
      */
-    public Intake () {
+    private Intake () {
         leftTalon = new TalonSRX(CAN_IDs.INTAKE_LEFT_TALON);
         rightTalon = new TalonSRX(CAN_IDs.INTAKE_RIGHT_TALON);
     }

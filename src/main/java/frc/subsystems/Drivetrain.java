@@ -27,7 +27,7 @@ public class Drivetrain extends Subsystem {
     /**
      * Constructs a new Drivetrain.
      */
-    public Drivetrain () {
+    private Drivetrain () {
         leftTalonMaster = new TalonSRX(CAN_IDs.DT_LEFT_TALON_MASTER);
         rightTalonMaster = new TalonSRX(CAN_IDs.DT_RIGHT_TALON_MASTER);
 
