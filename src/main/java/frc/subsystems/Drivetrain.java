@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.commands.DriveWithVelocityManual;
 import frc.robot.OI;
 import frc.robot.RobotMap;
-import frc.robot.RobotMap.CANIDs;
+import frc.robot.RobotMap.CAN_IDs;
 import frc.robot.RobotMap.DrivetrainConstants;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
@@ -19,11 +19,11 @@ public class Drivetrain extends Subsystem {
     private TalonSRX rightTalonFollower;
 
     public Drivetrain () {
-        leftTalonMaster = new TalonSRX(CANIDs.LEFT_TALON_MASTER);
-        rightTalonMaster = new TalonSRX(CANIDs.RIGHT_TALON_MASTER);
+        leftTalonMaster = new TalonSRX(CAN_IDs.DT_LEFT_TALON_MASTER);
+        rightTalonMaster = new TalonSRX(CAN_IDs.DT_RIGHT_TALON_MASTER);
 
-        leftTalonFollower = new TalonSRX(CANIDs.LEFT_TALON_FOLLOWER); 
-        rightTalonFollower = new TalonSRX(CANIDs.RIGHT_TALON_FOLLOWER);
+        leftTalonFollower = new TalonSRX(CAN_IDs.DT_LEFT_TALON_FOLLOWER);
+        rightTalonFollower = new TalonSRX(CAN_IDs.DT_RIGHT_TALON_FOLLOWER);
     }
 
     public void talonInit () {
