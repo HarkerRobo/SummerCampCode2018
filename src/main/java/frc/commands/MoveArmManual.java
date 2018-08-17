@@ -22,7 +22,7 @@ public class MoveArmManual extends Command {
         OI oi = OI.getInstance();
         
         double rightY = oi.getGamepad().getRightY();
-        if (Math.abs(rightY) < deadband)
+        if (Math.abs(rightY) < deadband || Robot.getArm().hasHitEnd())
             rightY = 0;
         else
         {

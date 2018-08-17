@@ -6,6 +6,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.commands.MoveArmManual;
 import frc.robot.OI;
+import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.*;
 
@@ -71,6 +72,14 @@ public class Arm extends Subsystem {
     public void setArmOutput (double output)
     {
         getArmTalon().set(ControlMode.PercentOutput, output);
+    }
+    
+    /**
+     * Determines whether the arm has reached the end of its motion in either direction.
+     * @return true if the arm has reached the end of its motion; false otherwise
+     */
+    public boolean hasHitEnd () {
+        return getArmTalon().getOutputCurrent() >= ArmConstants.CURRENT_SPIKE;
     }
 
 }

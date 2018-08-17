@@ -33,7 +33,7 @@ public class MoveArmPosition extends Command {
     @Override
     protected boolean isFinished () {
         // TODO Auto-generated method stub
-        return Robot.getArm().getArmTalon().getOutputCurrent() >= ArmConstants.CURRENT_SPIKE;
+        return Robot.getArm().hasHitEnd();
     }
     
 }
