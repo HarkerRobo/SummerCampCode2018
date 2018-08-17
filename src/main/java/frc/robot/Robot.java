@@ -53,6 +53,7 @@ public class Robot extends TimedRobot {
     public void teleopInit () {
         getDrivetrain().talonInit();
         getArm().talonInit();
+        getIntake().talonInit();
     }
 
     /**
