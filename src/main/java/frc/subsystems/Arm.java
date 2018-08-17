@@ -1,5 +1,6 @@
 package frc.subsystems;
 
+import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -55,6 +56,11 @@ public class Arm extends Subsystem {
 
     private TalonSRX getArmTalon () {
         return armTalon;
+    }
+    
+    public void setArmOutput (double output)
+    {
+        getArmTalon().set(ControlMode.PercentOutput, output);
     }
 
 }
