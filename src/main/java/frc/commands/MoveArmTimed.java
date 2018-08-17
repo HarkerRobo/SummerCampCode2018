@@ -15,15 +15,6 @@ public class MoveArmTimed extends TimedCommand {
     private ArmDirection direction;
 
     /**
-     * Represents which way the arm will move (up corresponds to positive output, down to negative).
-     * @author Finn Frankis
-     * @version Aug 16, 2018
-     */
-    public enum ArmDirection {
-        UP, DOWN
-    }
-
-    /**
      * Constructs a new RaiseArmTimed.
      * @param timeout the time for which the arm should be raised
      */

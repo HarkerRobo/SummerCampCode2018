@@ -18,6 +18,15 @@ public class Arm extends Subsystem {
     private static Arm arm; // singleton
 
     private TalonSRX armTalon;
+    
+    /**
+     * Represents which way the arm will move (up corresponds to positive output, down to negative).
+     * @author Finn Frankis
+     * @version Aug 16, 2018
+     */
+    public enum ArmDirection {
+        UP, DOWN
+    }
 
     public Arm () {
         armTalon = new TalonSRX(CAN_IDs.ARM_TALON);
