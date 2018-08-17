@@ -36,13 +36,13 @@ public class RobotMap {
         
         public static final boolean INVERTED = false;
         
-        public static int PEAK_CURRENT_LIMIT = 10;
+        public static int PEAK_CURRENT_LIMIT = 20;
         public static int PEAK_TIME_MS = 200;
-        public static int CONTINUOUS_CURRENT_LIMIT = 5;
+        public static int CONTINUOUS_CURRENT_LIMIT = 15;
         
         public static double TIMED_OUTPUT = 1;
         
-        public static double CURRENT_SPIKE = 100; 
+        public static double CURRENT_SPIKE = 10; 
     }
     
     public static final class IntakeConstants {
