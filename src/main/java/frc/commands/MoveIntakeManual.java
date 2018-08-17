@@ -14,6 +14,7 @@ public class MoveIntakeManual extends Command {
     private double deadband;
     
     public MoveIntakeManual (double deadband) {
+        requires (Robot.getIntake());
         this.deadband = deadband;
     }
     

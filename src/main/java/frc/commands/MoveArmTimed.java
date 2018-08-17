@@ -21,6 +21,7 @@ public class MoveArmTimed extends TimedCommand {
      */
     public MoveArmTimed (double timeout, ArmDirection direction) {
         super(timeout);
+        requires(Robot.getArm());
         this.direction = direction;
     }
 

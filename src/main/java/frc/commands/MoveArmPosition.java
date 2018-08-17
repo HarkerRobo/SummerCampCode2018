@@ -16,6 +16,7 @@ public class MoveArmPosition extends Command {
     private ArmDirection direction;
     
     public MoveArmPosition (ArmDirection direction) {
+        requires (Robot.getArm());
         this.direction = direction;
     }
     
