@@ -27,12 +27,12 @@ public class Robot extends TimedRobot {
     /**
      * This function is run when the robot is first started up and should be used for any initialization code.
      */
-    @Override
+    @Override 
     public void robotInit () {
         oi = OI.getInstance();
         dt = Drivetrain.getInstance();
         arm = Arm.getInstance();
-        intake = Intake.getInstance();
+        intake = Intake.getInstance(); 
     }
 
     /**
