@@ -2,6 +2,9 @@ package frc.robot;
 
 import org.harker.robotics.harkerrobolib.wrappers.GamepadWrapper;
 
+import frc.commands.MoveArmPosition;
+import frc.subsystems.Arm.ArmDirection;
+
 public class OI {
     public static OI oi;
     private static final int DRIVER_PORT = 0;
@@ -20,4 +23,12 @@ public class OI {
         return oi;
     }
 
-}
+    public OI () { 
+        initBindings();
+    }
+    
+    public void initBindings () { 
+        gamepad.getButtonY().whenPressed(new MoveArmPosition (ArmDirection.UP));
+        gamepad.getButtonA().whenPressed(new MoveArmPosition (ArmDirection.DOWN));
+    }
+} 

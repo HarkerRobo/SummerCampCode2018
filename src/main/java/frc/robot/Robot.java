@@ -20,12 +20,14 @@ import frc.subsystems.*;
 public class Robot extends TimedRobot {
     private static Drivetrain dt;
     private static Arm arm;
+    private static OI oi;
 
     /**
      * This function is run when the robot is first started up and should be used for any initialization code.
      */
     @Override
     public void robotInit () {
+        oi = OI.getInstance();
         dt = Drivetrain.getInstance();
         arm = Arm.getInstance();
     }
@@ -62,6 +64,10 @@ public class Robot extends TimedRobot {
     @Override
     public void testPeriodic () {}
 
+    public static OI getOI() {
+        return oi;
+    }
+    
     public static Drivetrain getDrivetrain () {
         return dt;
     }
@@ -69,4 +75,5 @@ public class Robot extends TimedRobot {
     public static Arm getArm () {
         return arm;
     }
+    
 }
