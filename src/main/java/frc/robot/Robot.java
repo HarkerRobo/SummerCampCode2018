@@ -20,6 +20,7 @@ import frc.subsystems.*;
 public class Robot extends TimedRobot {
     private static Drivetrain dt;
     private static Arm arm;
+    private static Intake intake;
     private static OI oi;
 
     /**
@@ -30,6 +31,7 @@ public class Robot extends TimedRobot {
         oi = OI.getInstance();
         dt = Drivetrain.getInstance();
         arm = Arm.getInstance();
+        intake = Intake.getInstance(); 
     }
 
     /**
