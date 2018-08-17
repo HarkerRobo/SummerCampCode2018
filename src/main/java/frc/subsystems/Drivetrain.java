@@ -2,6 +2,7 @@ package frc.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.commands.DriveWithVelocityManual;
+import frc.robot.OI;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.CANIDs;
 import frc.robot.RobotMap.DrivetrainConstants;
@@ -69,7 +70,7 @@ public class Drivetrain extends Subsystem {
     }
 
     public void initDefaultCommand () {
-        setDefaultCommand(new DriveWithVelocityManual());
+        setDefaultCommand(new DriveWithVelocityManual(OI.CONTROLLER_DEADBAND));
     }
 
     public static Drivetrain getInstance () {
