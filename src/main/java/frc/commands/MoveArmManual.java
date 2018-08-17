@@ -3,16 +3,17 @@ package frc.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.OI;
 import frc.robot.Robot;
+import frc.robot.RobotMap.ArmConstants;
 
 /**
  * 
  * @author Finn Frankis
  * @version Aug 16, 2018
  */
-public class RaiseArmManual extends Command {
+public class MoveArmManual extends Command {
     private double deadband;
     
-    public RaiseArmManual(double deadband) {
+    public MoveArmManual(double deadband) {
         requires (Robot.getArm());
         this.deadband = deadband;
     }
@@ -20,15 +21,15 @@ public class RaiseArmManual extends Command {
     public void execute() {
         OI oi = OI.getInstance();
         
-        double rightX = oi.getGamepad().getRightX();
-        if (Math.abs(rightX) < deadband)
-            rightX = 0;
+        double rightY = oi.getGamepad().getRightY();
+        if (Math.abs(rightY) < deadband)
+            rightY = 0;
         else
         {
-            rightX = rightX -  Math.signum(rightX) * deadband;
-            rightX /= 1- deadband;
+            rightY = rightY -  Math.signum(rightY) * deadband;
+            rightY /= 1- deadband;
         }
-        Robot.getArm().setArmOutput(rightX);
+        Robot.getArm().setArmOutput(ArmConstants.UP_SIGN * rightY);
     }
 
     /**

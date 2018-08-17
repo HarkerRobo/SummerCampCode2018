@@ -29,11 +29,14 @@ public class RobotMap {
 
     public static final class ArmConstants {
         public static final NeutralMode TALON_NEUTRAL_MODE = NeutralMode.Brake;
+        public static final int UP_SIGN = 1;
         
         public static final boolean INVERTED = false;
         
         public static int PEAK_CURRENT_LIMIT = 60;
         public static int PEAK_TIME_MS = 200;
         public static int CONTINUOUS_CURRENT_LIMIT = 40;
+        
+        public static double TIMED_OUTPUT = 1;
     }
 }
