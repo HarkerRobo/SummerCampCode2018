@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.command.TimedCommand;
 import frc.robot.Robot;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.ArmConstants;
+import frc.subsystems.Arm.ArmDirection;
 
 /**
  * 
@@ -26,6 +27,10 @@ public class MoveArmTimed extends TimedCommand {
     public void execute () {
         Robot.getArm().setArmOutput((direction == ArmDirection.UP ? ArmConstants.UP_SIGN : -ArmConstants.UP_SIGN)
                 * ArmConstants.TIMED_OUTPUT);
+    }
+    
+    public void end () {
+        Robot.getArm().setArmOutput(0);
     }
 
 }
