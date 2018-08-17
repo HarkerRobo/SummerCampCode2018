@@ -38,5 +38,7 @@ public class RobotMap {
         public static int CONTINUOUS_CURRENT_LIMIT = 40;
         
         public static double TIMED_OUTPUT = 1;
+        
+        public static double CURRENT_SPIKE = 100; 
     }
 }

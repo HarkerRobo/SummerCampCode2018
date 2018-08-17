@@ -64,7 +64,7 @@ public class Arm extends Subsystem {
         return arm;
     }
 
-    private TalonSRX getArmTalon () {
+    public TalonSRX getArmTalon () {
         return armTalon;
     }
     
