@@ -10,7 +10,8 @@ public class OI {
     private static final int DRIVER_PORT = 0;
 
     private GamepadWrapper gamepad = new GamepadWrapper(DRIVER_PORT);
-    public static final double CONTROLLER_DEADBAND = 0.1;
+    public static final double CONTROLLER_JOYSTICK_DEADBAND = 0.1;
+    public static final double CONTROLLER_TRIGGER_DEADBAND = 0.3;
 
     public GamepadWrapper getGamepad () {
         return gamepad;

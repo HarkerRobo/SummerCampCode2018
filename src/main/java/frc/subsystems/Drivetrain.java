@@ -70,7 +70,7 @@ public class Drivetrain extends Subsystem {
     }
 
     public void initDefaultCommand () {
-        setDefaultCommand(new DriveWithVelocityManual(OI.CONTROLLER_DEADBAND));
+        setDefaultCommand(new DriveWithVelocityManual(OI.CONTROLLER_JOYSTICK_DEADBAND));
     }
 
     public static Drivetrain getInstance () {

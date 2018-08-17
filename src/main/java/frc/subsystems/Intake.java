@@ -4,6 +4,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.commands.MoveIntakeManual;
+import frc.robot.OI;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.CAN_IDs;
 import frc.robot.RobotMap.IntakeConstants;
@@ -71,8 +73,7 @@ public class Intake extends Subsystem {
     */
     @Override
     protected void initDefaultCommand () {
-        // TODO Auto-generated method stub
-
+        setDefaultCommand (new MoveIntakeManual(OI.CONTROLLER_TRIGGER_DEADBAND));
     }
 
     /**
@@ -121,6 +122,10 @@ public class Intake extends Subsystem {
         setBoth(ControlMode.PercentOutput,
                 (direction == IntakeDirection.INTAKE ? IntakeConstants.INTAKE_SIGN : -IntakeConstants.INTAKE_SIGN)
                         * magnitude);
+    }
+    
+    public void setIntakePercent (double percent) {
+        setBoth (ControlMode.PercentOutput, percent);
     }
 
     public void setBoth (ControlMode cm, double magnitude) {

@@ -55,7 +55,7 @@ public class Arm extends Subsystem {
     */
     @Override
     protected void initDefaultCommand () {
-        setDefaultCommand (new MoveArmManual(OI.CONTROLLER_DEADBAND));
+        setDefaultCommand (new MoveArmManual(OI.CONTROLLER_JOYSTICK_DEADBAND));
     }
 
     public static Arm getInstance () {

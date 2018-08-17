@@ -78,4 +78,8 @@ public class Robot extends TimedRobot {
         return arm;
     }
     
+    public static Intake getIntake() {
+        return intake;
+    }
+    
 }
