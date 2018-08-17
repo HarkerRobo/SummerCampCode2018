@@ -4,6 +4,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.commands.RaiseArmManual;
+import frc.robot.OI;
 import frc.robot.RobotMap;
 import frc.robot.RobotMap.*;
 
@@ -43,8 +45,7 @@ public class Arm extends Subsystem {
     */
     @Override
     protected void initDefaultCommand () {
-        // TODO Auto-generated method stub
-
+        setDefaultCommand (new RaiseArmManual(OI.CONTROLLER_DEADBAND));
     }
 
     public static Arm getInstance () {
