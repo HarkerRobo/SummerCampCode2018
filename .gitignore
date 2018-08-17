@@ -58,6 +58,7 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+<<<<<<< HEAD
 
 ### Linux ###
 *~
@@ -158,3 +159,5 @@ bin/
 
 
 # End of https://www.gitignore.io/api/c++,java,linux,macos,gradle,windows,visualstudiocode
+=======
+>>>>>>> 81f7f33bedfb0084375666d6be2226867b1fa2c7
