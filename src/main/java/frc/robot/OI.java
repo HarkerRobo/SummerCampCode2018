@@ -31,5 +31,5 @@ public class OI {
     public void initBindings () { 
         gamepad.getButtonY().whenPressed(new MoveArmPosition (ArmDirection.UP));
         gamepad.getButtonA().whenPressed(new MoveArmPosition (ArmDirection.DOWN));
-    }
+    } 
 } 

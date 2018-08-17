@@ -103,7 +103,12 @@ public class Drivetrain extends Subsystem {
      * @param turn the amount by which the robot should turn (negative for left, positive for right)
      */
     public void arcadeDrivePercentOutput (double speed, double turn) {
-        leftTalonMaster.set(ControlMode.PercentOutput, speed + turn);
-        rightTalonMaster.set(ControlMode.PercentOutput, speed - turn);
+        double divisor = Math.max(1, Math.max(Math.abs(speed + Math.pow(turn, 2)), Math.abs(speed - Math.pow(turn, 2))));
+        double leftOutputBase = speed + turn * Math.abs(turn);
+        leftTalonMaster.set(ControlMode.PercentOutput, leftOutputBase / divisor);
+
+        double rightOutputBase = speed - turn * Math.abs(turn);
+        rightTalonMaster.set(ControlMode.PercentOutput,
+                rightOutputBase/divisor);
     }
 }
