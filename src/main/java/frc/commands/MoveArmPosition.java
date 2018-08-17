@@ -15,25 +15,35 @@ public class MoveArmPosition extends Command {
 
     private ArmDirection direction;
     
+    /**
+     * Constructs a new MoveArmPosition.
+     * @param direction the direction in which the arm should move
+     */
     public MoveArmPosition (ArmDirection direction) {
         requires (Robot.getArm());
         this.direction = direction;
     }
     
+    /**
+     * {@inheritDoc}
+     */
     public void execute () { 
         Robot.getArm().setArmOutput((direction == ArmDirection.UP ? ArmConstants.UP_SIGN : -ArmConstants.UP_SIGN)
                 * ArmConstants.TIMED_OUTPUT);
     }
     
+    /**
+     * {@inheritDoc}
+     */
     public void end () {
         Robot.getArm().setArmOutput(0);
     }
+    
     /**
-    * @return
-    */
+     * {@inheritDoc}
+     */
     @Override
     protected boolean isFinished () {
-        // TODO Auto-generated method stub
         return Robot.getArm().hasHitEnd();
     }
     

@@ -6,18 +6,25 @@ import frc.robot.Robot;
 import frc.robot.RobotMap.ArmConstants;
 
 /**
- * 
+ * Moves the arm with a given percent output using manual control.
  * @author Finn Frankis
  * @version Aug 16, 2018
  */
 public class MoveArmManual extends Command {
     private double deadband;
     
+    /**
+     * Constructs a new MoveArmManual.
+     * @param deadband the amount below which all joystick input will be treated as noise and ignored
+     */
     public MoveArmManual(double deadband) {
         requires (Robot.getArm());
         this.deadband = deadband;
     }
     
+    /**
+     * {@inheritDoc}
+     */
     public void execute() {
         OI oi = OI.getInstance();
         
@@ -33,8 +40,8 @@ public class MoveArmManual extends Command {
     }
 
     /**
-    * @return
-    */
+     * {@inheritDoc}
+     */
     @Override
     protected boolean isFinished () {
         return false;

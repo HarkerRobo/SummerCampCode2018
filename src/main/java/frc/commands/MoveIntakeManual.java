@@ -5,7 +5,7 @@ import frc.robot.OI;
 import frc.robot.Robot;
 
 /**
- * 
+ * Moves the intake with a given percent output manually.
  * @author Finn Frankis
  * @version Aug 16, 2018
  */
@@ -13,11 +13,18 @@ public class MoveIntakeManual extends Command {
 
     private double deadband;
     
+    /**
+     * Constructs a new MoveIntakeManual.
+     * @param deadband the amount below which all trigger input will be treated as noise and ignored
+     */
     public MoveIntakeManual (double deadband) {
         requires (Robot.getIntake());
         this.deadband = deadband;
     }
     
+    /**
+     * {@inheritDoc}
+     */
     public void execute () {
         OI oi = OI.getInstance();
         double leftTrigger = oi.getGamepad().getLeftTrigger(); // intake
@@ -34,9 +41,10 @@ public class MoveIntakeManual extends Command {
         
         Robot.getIntake().setIntakePercent(output);
     }
+
     /**
-    * @return
-    */
+     * {@inheritDoc}
+     */
     @Override
     protected boolean isFinished () {
         // TODO Auto-generated method stub

@@ -7,7 +7,7 @@ import frc.robot.RobotMap.ArmConstants;
 import frc.subsystems.Arm.ArmDirection;
 
 /**
- * 
+ * Moves the arm for a given amount of time.
  * @author Finn Frankis
  * @version Aug 16, 2018
  */
@@ -25,11 +25,17 @@ public class MoveArmTimed extends TimedCommand {
         this.direction = direction;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public void execute () {
         Robot.getArm().setArmOutput((direction == ArmDirection.UP ? ArmConstants.UP_SIGN : -ArmConstants.UP_SIGN)
                 * ArmConstants.TIMED_OUTPUT);
     }
     
+    /**
+     * {@inheritDoc}
+     */
     public void end () {
         Robot.getArm().setArmOutput(0);
     }

@@ -2,6 +2,12 @@ package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 
+/**
+ * Holds all the important constants for use with the robot.
+ * 
+ * @author Finn Frankis
+ * @version Aug 16, 2018
+ */
 public class RobotMap {
     public static final int TIMEOUT = 10;
     

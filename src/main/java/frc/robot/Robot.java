@@ -70,18 +70,34 @@ public class Robot extends TimedRobot {
     @Override
     public void testPeriodic () {}
 
+    /**
+     * Gets the current instance of OI.
+     * @return the current OI instance
+     */
     public static OI getOI () {
         return oi;
     }
 
+    /**
+     * Gets the current instance of Drivetrain.
+     * @return the current Drivetrain instance
+     */
     public static Drivetrain getDrivetrain () {
         return dt;
     }
 
+    /**
+     * Gets the current instance of Arm.
+     * @return the current Arm instance
+     */
     public static Arm getArm () {
         return arm;
     }
 
+    /**
+     * Gets the current instance of Intake.
+     * @return the current Intake instance
+     */
     public static Intake getIntake () {
         return intake;
     }

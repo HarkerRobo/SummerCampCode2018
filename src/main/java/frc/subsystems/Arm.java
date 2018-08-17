@@ -11,7 +11,7 @@ import frc.robot.RobotMap;
 import frc.robot.RobotMap.*;
 
 /**
- * 
+ * Represents the arm on the robot.
  * @author Finn Frankis
  * @version Aug 16, 2018
  */
@@ -29,10 +29,16 @@ public class Arm extends Subsystem {
         UP, DOWN
     }
 
+    /**
+     * Constructs a new Arm.
+     */
     public Arm () {
         armTalon = new TalonSRX(CAN_IDs.ARM_TALON);
     }
 
+    /**
+     * Calls all important initialization code on the arm talons.
+     */
     public void talonInit () {
         armTalon.setNeutralMode(ArmConstants.TALON_NEUTRAL_MODE);
         armTalon.setInverted(ArmConstants.INVERTED);
@@ -40,6 +46,12 @@ public class Arm extends Subsystem {
                 ArmConstants.CONTINUOUS_CURRENT_LIMIT);
     }
 
+    /**
+     * Sets the current limit on the Arm.
+     * @param peakCurrentLimit the peak current limit (the initial limit, to last for the given amount of time)
+     * @param peakTime the time for which the peak current limit should last 
+     * @param continuousLimit the limit after peakTime milliseconds have passed
+     */
     private void setCurrentLimit (int peakCurrentLimit, int peakTime, int continuousLimit) {
         armTalon.configPeakCurrentLimit(peakCurrentLimit, RobotMap.TIMEOUT);
 
@@ -51,13 +63,17 @@ public class Arm extends Subsystem {
     }
 
     /**
-    * 
+    * {@inheritDoc}
     */
     @Override
     protected void initDefaultCommand () {
         setDefaultCommand (new MoveArmManual(OI.CONTROLLER_JOYSTICK_DEADBAND));
     }
 
+    /**
+     * Gets the current instance of Arm, creating a new one if necessary.
+     * @return the current instance of Arm
+     */
     public static Arm getInstance () {
         if (arm == null) {
             arm = new Arm();
@@ -65,10 +81,18 @@ public class Arm extends Subsystem {
         return arm;
     }
 
+    /**
+     * Gets the arm Talon.
+     * @return the Talon corresponding to the arm
+     */
     public TalonSRX getArmTalon () {
         return armTalon;
     }
     
+    /**
+     * Sets the arm Talon to move at a given percent [-1, 1].
+     * @param output the percent at which the arm Talon should be moved
+     */
     public void setArmOutput (double output)
     {
         getArmTalon().set(ControlMode.PercentOutput, output);
