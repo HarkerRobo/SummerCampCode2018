@@ -29,10 +29,10 @@ public class Robot extends TimedRobot {
      */
     @Override 
     public void robotInit () {
-        oi = OI.getInstance();
         dt = Drivetrain.getInstance();
         arm = Arm.getInstance();
         intake = Intake.getInstance(); 
+        oi = OI.getInstance();
     }
 
     /**
