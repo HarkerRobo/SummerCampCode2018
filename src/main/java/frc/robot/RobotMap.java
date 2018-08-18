@@ -12,15 +12,15 @@ public class RobotMap {
     public static final int TIMEOUT = 10;
     
     public static final class CAN_IDs {
-        public static final int DT_LEFT_TALON_MASTER = -1;
-        public static final int DT_RIGHT_TALON_MASTER = -1;
-        public static final int DT_LEFT_TALON_FOLLOWER = -1;
-        public static final int DT_RIGHT_TALON_FOLLOWER = -1;
+        public static final int DT_LEFT_TALON_MASTER = 2;
+        public static final int DT_RIGHT_TALON_MASTER = 5;
+        public static final int DT_LEFT_TALON_FOLLOWER = 1;
+        public static final int DT_RIGHT_TALON_FOLLOWER = 6;
         
-        public static final int ARM_TALON = -1;
+        public static final int ARM_TALON = 0;
         
-        public static final int INTAKE_LEFT_TALON = -1;
-        public static final int INTAKE_RIGHT_TALON = -1;
+        public static final int INTAKE_LEFT_TALON = 3;
+        public static final int INTAKE_RIGHT_TALON = 4;
     }
     
     public static final class DrivetrainConstants {
